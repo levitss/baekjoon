@@ -7,8 +7,10 @@ public class Main{
     //주어진 값의 가장 작은 생성자를 구하기
     public static int solve(String str) {
         //x + a+b+c    a,b,c는 0~9의 값 x.charAt(0)
-int sum=0;
-        for (int i = 0; i < 1000000; i++) {
+        int t = Integer.parseInt(str);
+        int e=t-str.length()*9;
+        int sum = 0;
+        for (int i = e; i < t; i++) {
             String s=String.valueOf(i);
             for (int j = 0; j < s.length(); j++) {
                 sum+=s.charAt(j)-'0';
@@ -30,6 +32,9 @@ return 0;
 
     }
 }
+
+
+
 
 
 
