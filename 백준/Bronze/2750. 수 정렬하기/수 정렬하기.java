@@ -1,29 +1,26 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.io.*;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        List<Integer> list = new ArrayList();
+       int n = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
+        boolean barr[] = new boolean[2001];
+        int input=0;
         for (int i = 0; i < n; i++) {
-            list.add(Integer.parseInt(br.readLine()));
+            input = Integer.parseInt(br.readLine());
+            barr[input+1000] = true;
         }
-        Collections.sort(list);
-        for (Integer i : list) {
-            System.out.println(i);
+        for (int i = 0; i < 2001; i++) {
+            if (barr[i]) {
 
+                sb.append(i-1000);
+                sb.append("\n");
+
+            }
         }
-
-        //list 입력하고 sort하기?
-
+        System.out.println(sb);
 
     }
 }
-
-
