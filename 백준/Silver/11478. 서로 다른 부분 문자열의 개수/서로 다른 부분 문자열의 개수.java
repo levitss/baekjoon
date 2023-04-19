@@ -10,12 +10,10 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
         Set set = new HashSet();
-        set.add(str);
         for (int i = 0; i < str.length(); i++) {
             //첫 자리
             for (int w = i+1; w <= str.length(); w++) {
                 set.add(str.substring(i, w));
-
             }
         }
         System.out.println(set.size());
