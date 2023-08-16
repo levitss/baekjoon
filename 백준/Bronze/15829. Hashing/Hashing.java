@@ -10,13 +10,15 @@ public class Main {
         final long M = 1234567891;
         //입력은 1~26 알파벳 소문자 한정
         long sum = 0;
+        long r = 1;
         String s = br.readLine();
         for (int i = 0; i < n; i++) {
             int i1 = s.charAt(i) - 96;
-            sum+=(long)(i1 * Math.pow(31, i));
+            sum+=(long)(i1 * r)%M;
+            r = r * 31 % M;
         }
 
-        System.out.println(sum);
+        System.out.println(sum%M);
 
     }
 
