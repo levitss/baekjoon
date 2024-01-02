@@ -4,12 +4,11 @@ class Solution {
         StringBuilder sb=new StringBuilder();
         
         
-        while(true){
+        while(n>3){
             sb.insert(0,n%3);
             n/=3;
-            if(n==0) break;
         }        
-
+        sb.insert(0,n);
 
         sb=sb.reverse();
         int powIndex=0;
